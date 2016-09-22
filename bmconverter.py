@@ -1250,6 +1250,7 @@ def write_pdftk(root, outfilename, metadata={}):
         if not node.open:
             warnings.add(\
                         "WARNING: The pdftk format cannot express closed nodes")
+        outfile.write(  "BookmarkBegin\n")
         outfile.write(  "BookmarkTitle: %s\n" \
                                 % escape( node.title.strip() )  )
         outfile.write("BookmarkLevel: %s\n" % node.level())
